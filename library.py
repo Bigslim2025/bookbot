@@ -1,5 +1,8 @@
+import sys
 from reader import get_book_text
 
-book_path = get_book_text("books/frankenstein.txt")
-print("============ BOOKBOT ============")
-print("Analyzing book found at books/frankenstein.txt...")
+def get_book_path():
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    return sys.argv[1]
