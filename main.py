@@ -1,13 +1,19 @@
+import sys
 from reader import get_book_text
 from stats import get_num_words, get_num_chars, get_sorted_chars
-from library import get_book_path
 
 
 def main():
+    # Funtion defined to return the book path from command-line args or exits if missing 
+    def get_book_path():
+        if len(sys.argv) < 2:
+            print("Usage: python3 main.py <path_to_book>")
+            sys.exit(1)
+        return sys.argv[1]
     
     # Feedback on the boot of the program an get the book path
-    print("============ BOOKBOT ============")
     book_path = get_book_path()
+    print("============ BOOKBOT ============")
     
     # Feedback on the book found an its path 
     print(f"Analyzing book found at {book_path}")
