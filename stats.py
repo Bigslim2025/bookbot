@@ -1,25 +1,25 @@
-def get_num_words(frankenstein_text):
+def get_num_words(book_path):
 # Function defined to count the words in a book
     num_words = None # necessary for the rest of the function
-    words_list = frankenstein_text.split() # split text into a list
+    words_list = book_path.split() # split text into a list
     num_words = len(words_list) # get through the list and find the number of words
     print("----------- Word Count ----------")
     print(f"Found {num_words} total words")
     return num_words # to send the function to the main
 
-def get_num_chars(frankenstein_text):
+def get_num_chars(book_path):
 # Function defined to count the characters in a book
-    frankenstein_text = frankenstein_text.lower() # converts the book to lower case to be read by the function
-    # print(frankenstein_text) # cheks if the lower case is applied (comment out as soon as debugged)
+    # print(book_path) # cheks if uppercase is still applied (comment out as soon as debugged)
+    book_path = book_path.lower() # converts the book to lower case to be read by the function
+    # print(book_path) # cheks if the lower case is applied (comment out as soon as debugged)
     num_chars_dict = {} # necessary for the rest of the function 
-    # loop used to transform the dictionary on a list
-    for char in frankenstein_text:
+    # loop used to transform the dictionary into a list
+    for char in book_path:
         if char in num_chars_dict:
             num_chars_dict[char] += 1
         else:
             num_chars_dict[char] = 1
     print("--------- Character Count -------")
-    # print(f"Found this number characters: {num_chars_dict}.")
     return num_chars_dict # to send the function to the main
 
 def get_sorted_chars(num_chars_dict):
